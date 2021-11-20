@@ -1,0 +1,63 @@
+<?php	
+	$info = [];
+	$image = $this->view_data['image'];
+	$social = $this->view_data['social'];
+	$data = $this->view_data['info'];
+	foreach($data as $row){
+		$feature_name = $row['feature_name'];
+		$feature_val = $row['value'];
+		$info[$feature_name] = $feature_val;
+	}
+?>
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="<?=$image?>">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="page-top-text text-white">
+					<h2>Our House Listing</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hero-social-warp">
+		<div class="hero-social">
+			<?php
+				foreach($social as $keyn){
+					echo '<a href="'.$keyn['value'].'"><i class="fa fa-'.$keyn['feature_name'].'"></i></a>';
+				}
+			?>
+		</div>
+	</div>
+</section>
+<!-- Page top section end -->
+
+<!-- Developments section-->
+<section class="developments-section spad">
+	<div class="container">
+		<div class="row">
+			<?php
+				$house = $this->view_data['house'];
+				foreach ($house as $value) {
+					echo '<div class="col-lg-4 col-md-6">
+								<div class="development-box">
+									<img src="'.$value['image'].'" alt="">
+									<div class="dev-text">
+										<h4>'.$value['name'].'</h4>
+										<h5>'.$value['road'].'</h5>
+										<p>'.$value['summary'].'</p>
+										<div class="dev-price">
+											<span>from</span>
+											<h4>'.$value['price'].'</h4>
+										</div>
+										<a href="property?id='.$value['id'].'" class="site-btn">MORE INFO</a>
+									</div>
+								</div>
+							</div>';
+				}
+			?>
+		</div>
+	</div>
+</section>
+<!-- Developments section end-->

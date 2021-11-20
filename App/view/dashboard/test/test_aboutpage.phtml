@@ -1,0 +1,114 @@
+<?php	
+	$info = [];
+	$staff = $this->view_data['staff'];
+	$data = $this->view_data['info'];
+	foreach($data as $row){
+		$feature_name = $row['feature_name'];
+		$feature_val = $row['value'];
+		$info[$feature_name] = $feature_val;
+	}
+?>
+
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="<?php echo DOMAIN ?>assets/img/page-top-bg/1.jpg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="page-top-text text-white">
+					<h2>About Us</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hero-social-warp">
+			<div class="hero-social">
+				<a href=""><i class="fa fa-facebook"></i></a>
+				<a href=""><i class="fa fa-linkedin"></i></a>
+				<a href=""><i class="fa fa-twitter"></i></a>
+				<a href=""><i class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+</section>
+<!-- Page top section end -->
+
+<!-- About section -->
+<section class="about-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="about-text">
+					<h4><?=$info['Header'];?></h4>
+					<p><?=$info['Content'];?></p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="about-slider owl-carousel">
+					<?php
+						$slide_content = $info['Slide Image'];
+						$slides = explode(";", $slide_content);
+						foreach ($slides as $value) {
+							echo '<img src="'.$value.'" alt="">';
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- About section end -->
+
+<!-- Milestone section end -->
+<section class="milestone-section">
+	<div class="milestone-warp">
+		<div class="milestone">
+			<h2></h2>
+			<h4></h4>
+		</div>
+		<div class="milestone">
+			<h2><?=$info['Residential Developed'];?></h2>
+			<h4>Residential  Developed</h4>
+		</div>
+		<div class="milestone">
+			<h2><?=$info['Homes Builded'];?></h2>
+			<h4>Homes Builded</h4>
+		</div>
+		<div class="milestone">
+			<h2><?=$info['Statisfied Custumers'];?></h2>
+			<h4>Statisfied Custumers</h4>
+		</div>
+		<div class="milestone">
+			<h2></h2>
+			<h4></h4>
+		</div>
+	</div>
+</section>
+<!-- Milestone section end -->
+
+
+<!-- Team section -->
+<section class="team-section">
+	<div class="container">
+		<div class="row">
+			
+			<?php
+				foreach ($staff as $value) {
+					echo '<div class="col-lg-6">
+							<div class="team-member">
+								<div class="member-pic">
+									<img src="'.$value['image'].'" alt="">
+								</div>
+								<div class="member-info">
+									<h4>'.$value['fullname'].'</h4>
+									<h5>'.$value['position'].'</h5>
+									<p>'.$value['about'].'.</p>
+								</div>
+							</div>
+						</div>';
+				}
+			?>
+
+		</div>
+	</div>
+</section>
+<!-- Team section end -->

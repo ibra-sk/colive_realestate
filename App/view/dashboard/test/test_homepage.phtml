@@ -1,0 +1,154 @@
+<?php	
+	$info = [];
+	$data = $this->view_data['info'];
+	$imge = $this->view_data['img_val'];
+	foreach($data as $row){
+		$feature_name = $row['feature_name'];
+		$feature_val = $row['value'];
+		$info[$feature_name] = $feature_val;
+	}
+?>
+
+
+<!-- Page top section -->
+<section class="page-top-section set-bg"  data-setbg="<?php if($imge == 'HeroImage'){echo DOMAIN.'data/temp/'.$imge.'.jpg';}else{echo $info['Hero Image'];}?>">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="page-top-text text-white">
+					<h2><?=$info['Hero Header'];?></h2>
+					<p><?=$info['Hero Subtitle'];?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hero-social-warp">
+			<div class="hero-social">
+				<a href=""><i class="fa fa-facebook"></i></a>
+				<a href=""><i class="fa fa-linkedin"></i></a>
+				<a href=""><i class="fa fa-twitter"></i></a>
+				<a href=""><i class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+</section>
+<!-- Page top section end -->
+
+<!-- Intro section -->
+<section class="intro-section">
+	<div class="container">
+		<div class="section-title">
+			<h2>our houses</h2>
+		</div>
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="intro-img-box">
+					<h4><?=$info['Promo House1 Header'];?></h4>
+					<img src="<?php if($imge == 'PromoHouse1Image'){echo DOMAIN.'data/temp/'.$imge.'.jpg';}else{echo $info['Promo House1 Image'];}?>" alt="">
+				</div>
+			</div>
+			<div class="col-lg-4 align-items-end d-flex">
+				<div class="intro-text-box">
+					<p><?=$info['Promo House1 Quote'];?></p>
+					<a href="<?=$info['Promo House1 Button'];?>" class="site-btn">MORE INFO</a>
+				</div>
+			</div>
+			<div class="col-lg-4 align-items-end d-flex order-2 order-lg-1">
+				<div class="intro-text-box">
+					<p><?=$info['Promo House2 Quote'];?></p>
+					<a href="<?=$info['Promo House2 Button'];?>" class="site-btn">MORE INFO</a>
+				</div>
+			</div>
+			<div class="col-lg-8 order-1 order-lg-2">
+				<div class="intro-img-box">
+					<h4><?=$info['Promo House2 Header'];?></h4>
+					<img src="<?php if($imge == 'PromoHouse2Image'){echo DOMAIN.'data/temp/'.$imge.'.jpg';}else{echo $info['Promo House2 Image'];}?>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Intro section end-->
+
+<!-- Design section end-->
+<section class="design-section">
+	<div class="container">
+		<div class="section-title st-light">
+			<h2>Showroom</h2>
+		</div>
+	</div>
+	<div class="design-slider owl-carousel">
+		<?php
+			$slide_content = $info['Showroom Image'];
+			$slides = explode(";", $slide_content);
+			foreach ($slides as $value) {
+				echo '<a href="'.$value.'" class="img-popup-gallery">
+						<img src="'.$value.'" alt="">
+						<i class="flaticon-151-reading-glasses"></i>
+					</a>';
+			}
+		?>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="design-text text-white">
+					<h4><?=$info['Showroom Title1'];?></h4>
+					<p><?=$info['Showroom Quote1'];?></p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="design-text text-white">
+					<h4><?=$info['Showroom Title2'];?></h4>
+					<p><?=$info['Showroom Quote2'];?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Design section end-->
+
+<!-- Features section -->
+<section class="features-section">
+	<div class="container">
+		<div class="section-title">
+			<h2>features</h2>
+		</div>
+	</div>
+	<div class="features-slider owl-carousel">
+		<div class="feature-box">
+			<i class="flaticon-151-banker"></i>
+			<h5>ECO-FRIENDLY HOMES</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+		</div>		
+		<div class="feature-box">
+			<i class="flaticon-151-security-system"></i>
+			<h5>SECURE AREA</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi-dunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+		</div>		
+		<div class="feature-box">
+			<i class="flaticon-151-maps-and-flags-1"></i>
+			<h5>FREE PARKING</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi-dunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+		</div>		
+		<div class="feature-box">
+			<i class="flaticon-151-step-ladder"></i>
+			<h5>COMUNITY POOL</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi-dunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+		</div>		
+		<div class="feature-box">
+			<i class="flaticon-151-real-estate-6"></i>
+			<h5>BEST DEALS</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi-dunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+		</div>		
+	</div>
+</section>
+<!-- Features section end-->
+
+<!-- Call to action section -->
+<section class="call-to-action-section set-bg" data-setbg="<?php echo DOMAIN ?>assets/img/cta-bg.jpg">
+	<div class="container text-white text-center">
+		<h2>Ask our top consultants for an personalized offer today. </h2>
+		<button class="site-btn sb-light sb-big">CALL 800-1-5141</button>
+	</div>
+</section>
+<!-- Call to action section end-->

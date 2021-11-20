@@ -1,0 +1,52 @@
+<?php	
+	$social = $this->view_data['social'];
+?>
+<!-- Footer section -->
+	<footer class="footer-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-2 col-sm-12">
+						<div class="footer-widget">
+							<img src="<?php echo DOMAIN ?>assets/img/log-color.png" alt="" style="height:150px;width:200px">
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4">
+						<div class="footer-widget">
+							<h5>SOCIAL</h5>
+							<div class="footer-social">
+								<?php
+									foreach($social as $keyn){
+										echo '<a href="'.$keyn['value'].'"><i class="fa fa-'.$keyn['feature_name'].'"></i></a>';
+									}
+								?>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-sm-4">
+						<div class="footer-widget">
+							<h5>COMPANY</h5>
+							<ul>
+								<li><a href="">About Us</a></li>
+								<li><a href="">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					
+				</div>
+				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> || All rights reserved 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+			</div>
+		</footer>
+		<!-- Footer section end-->
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="<?php echo DOMAIN ?>assets/js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo DOMAIN ?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo DOMAIN ?>assets/js/owl.carousel.min.js"></script>
+	<script src="<?php echo DOMAIN ?>assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="<?php echo DOMAIN ?>assets/js/main.js"></script>
+
+	</body>
+</html>

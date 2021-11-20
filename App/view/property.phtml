@@ -1,0 +1,115 @@
+<?php	
+	$info = [];
+	$social = $this->view_data['social'];
+	$house = $this->view_data['house'];
+?>
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" style="height:80px !important" data-setbg="assets/img/page-top-bg/2.jpg">
+</section>
+<!-- Page top section end -->
+
+<!-- Property details section -->
+<section class="property-details-section spad">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-7">
+				<div class="property-details">
+					<h2><?=$house['name']?></h2>
+					<div class="property-info">
+						<h6>Lot Size</h6>
+						<div class="pi-icon">
+							<i class="flaticon-151-plans"></i>
+							<span><?=$house['size']?> sqft </span>
+						</div>
+					</div>
+					<div class="property-info">
+						<h6>Beds</h6>
+						<div class="pi-icon">
+							<i class="flaticon-151-beds"></i>
+							<span><?=$house['beds']?></span>
+						</div>
+					</div>
+					<div class="property-info">
+						<h6>Baths</h6>
+						<div class="pi-icon">
+							<i class="flaticon-151-relax"></i>
+							<span><?=$house['baths']?></span>
+						</div>
+					</div>
+					<div class="property-info">
+						<h6>Garage</h6>
+						<div class="pi-icon">
+							<i class="flaticon-151-transportation"></i>
+							<span><?=$house['garage']?></span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-xl-6 col-lg-5 text-lg-right text-left">
+				<div class="property-price">
+					<h2><?=$house['price']?></h2>
+					<p><?=$house['road']?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Property details section end -->
+
+<!-- Property features slider -->
+<div class="property-features-slider owl-carousel">
+	<?php
+		$slide_content = $house['slidepreview'];
+		$slides = explode(",", $slide_content);
+		foreach ($slides as $value) {
+			echo '<a href="'.$value.'" class="img-popup-gallery">
+					<img src="'.$value.'" alt="">
+					<i class="flaticon-151-reading-glasses"></i>
+				</a>';
+		}
+	?>
+</div>
+<!-- Property features slider end -->
+
+<!-- Property overview section-->
+<section class="property-overview-section spad pb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="property-overview-text">
+					<h4>GENERAL OVERVIEW</h4>
+					<p><?=$house['summary']?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid pt-5">
+		<div class="row">
+			<div class="col-lg-6 p-0">
+				<img src="<?=$house['feature img 1']?>" alt="">
+			</div>
+			<div class="col-lg-6 p-0 d-flex align-items-center justify-content-center">
+				<div class="property-text-warp">
+					<div class="property-overview-text">
+						<h4><?=$house['feature title 1']?></h4>
+						<p><?=$house['feature info 1']?></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 p-0 d-flex align-items-center justify-content-center order-2 order-lg-1">
+				<div class="property-text-warp">
+					<div class="property-overview-text">
+						<h4><?=$house['feature title 2']?></h4>
+						<p><?=$house['feature info 2']?></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 p-0 order-1 order-lg-2">
+				<img src="<?=$house['feature img 2']?>" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Property overview section end-->

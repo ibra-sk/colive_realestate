@@ -1,0 +1,82 @@
+<?php	
+	$info = [];
+	$image = $this->view_data['image'];
+	$data = $this->view_data['info'];
+	$social = $this->view_data['social'];
+	foreach($data as $row){
+		$feature_name = $row['feature_name'];
+		$feature_val = $row['value'];
+		$info[$feature_name] = $feature_val;
+	}
+?>
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="<?=$image?>">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="page-top-text text-white">
+					<h2>Contact</h2>
+					<p>All our contact information for easy access.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hero-social-warp">
+		<div class="hero-social">
+			<?php
+				foreach($social as $keyn){
+					echo '<a href="'.$keyn['value'].'"><i class="fa fa-'.$keyn['feature_name'].'"></i></a>';
+				}
+			?>
+		</div>
+	</div>
+</section>
+<!-- Page top section end -->
+
+<!-- Contact section-->
+<section class="contact-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 offset-lg-5">
+				<div class="contact-info-box">
+					<h5 class="contact-title">OFFICE</h5>
+					<div class="contact-info">
+						<div class="ci-item">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/location.png" class="ci-icon" alt="">
+							<p><?=$info['Address'];?></p>
+						</div>
+						<div class="ci-item">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/headphone.png" class="ci-icon" alt="">
+							<p><?=$info['Telephone'];?></p>
+						</div>
+						<div class="ci-item">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/envelope.png" class="ci-icon" alt="">
+							<p><?=$info['Email'];?></p>
+						</div>
+					</div>
+					<h5 class="contact-title">QUICK HELLO</h5>
+					<form class="contact-form">
+						<div class="form-field">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/profile.png" alt="" >
+							<input type="text" placeholder="Full Name">
+						</div>
+						<div class="form-field">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/envelope.png" alt="" >
+							<input type="text" placeholder="Email Address">
+						</div>
+						<div class="form-field">
+							<img src="<?php echo DOMAIN ?>assets/img/icons/chat.png" alt="" >
+							<textarea placeholder="Hi ..."></textarea>
+						</div>
+						<button class="site-btn">send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Map -->
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d693971.6621063045!2d-90.0912505103206!3d36.108831972894045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d6b1b4c412b29f%3A0x9b2d8c4447fe1c96!2sCedar+St%2C+Black+Rock%2C+AR+72415%2C+USA!5e0!3m2!1sen!2sbd!4v1565787762946!5m2!1sen!2sbd" style="border:0"></iframe>
+	</div>
+</section>
+<!-- Contact section end-->

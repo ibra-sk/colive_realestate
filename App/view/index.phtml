@@ -1,0 +1,119 @@
+<?php	
+	$info = [];
+	$data = $this->view_data['info'];
+	$social = $this->view_data['social'];
+	foreach($data as $row){
+		$feature_name = $row['feature_name'];
+		$feature_val = $row['value'];
+		$info[$feature_name] = $feature_val;
+	}
+?>
+
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="<?=$info['Hero Image'];?>">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="page-top-text text-white">
+					<h2><?=$info['Hero Header'];?></h2>
+					<p><?=$info['Hero Subtitle'];?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hero-social-warp">
+			<div class="hero-social">
+				<?php
+					foreach($social as $keyn){
+						echo '<a href="'.$keyn['value'].'"><i class="fa fa-'.$keyn['feature_name'].'"></i></a>';
+					}
+				?>				
+			</div>
+		</div>
+</section>
+<!-- Page top section end -->
+
+
+<!-- Design section end-->
+<section class="design-section">
+	<div class="container">
+		<div class="section-title st-light">
+			<h2>Showroom</h2>
+		</div>
+	</div>
+	<div class="design-slider owl-carousel">
+		<?php
+			$slide_content = $info['Showroom Image'];
+			$slides = explode(";", $slide_content);
+			foreach ($slides as $value) {
+				echo '<a href="'.$value.'" class="img-popup-gallery">
+						<img src="'.$value.'" alt="">
+						<i class="flaticon-151-reading-glasses"></i>
+					</a>';
+			}
+		?>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="design-text text-white">
+					<h4><?=$info['Showroom Title1'];?></h4>
+					<p><?=$info['Showroom Quote1'];?></p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="design-text text-white">
+					<h4><?=$info['Showroom Title2'];?></h4>
+					<p><?=$info['Showroom Quote2'];?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Design section end-->
+
+<!-- Intro section -->
+<section class="intro-section">
+	<div class="container">
+		<div class="section-title">
+			<h2>our houses</h2>
+		</div>
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="intro-img-box">
+					<h4><?=$info['Promo House1 Header'];?></h4>
+					<img src="<?=$info['Promo House1 Image'];?>" alt="">
+				</div>
+			</div>
+			<div class="col-lg-4 align-items-end d-flex">
+				<div class="intro-text-box">
+					<p><?=$info['Promo House1 Quote'];?></p>
+					<a href="<?=$info['Promo House1 Button'];?>" class="site-btn">MORE INFO</a>
+				</div>
+			</div>
+			<div class="col-lg-4 align-items-end d-flex order-2 order-lg-1">
+				<div class="intro-text-box">
+					<p><?=$info['Promo House2 Quote'];?></p>
+					<a href="<?=$info['Promo House2 Button'];?>" class="site-btn">MORE INFO</a>
+				</div>
+			</div>
+			<div class="col-lg-8 order-1 order-lg-2">
+				<div class="intro-img-box">
+					<h4><?=$info['Promo House2 Header'];?></h4>
+					<img src="<?=$info['Promo House2 Image'];?>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Intro section end-->
+
+<!-- Call to action section -->
+<section class="call-to-action-section set-bg" data-setbg="<?php echo DOMAIN ?>assets/img/cta-bg.jpg">
+	<div class="container text-white text-center">
+		<h2>Ask our top consultants for an personalized offer today. </h2>
+		<a href="contact" class="site-btn sb-light sb-big">CALL US</a>
+	</div>
+</section>
+<!-- Call to action section end-->

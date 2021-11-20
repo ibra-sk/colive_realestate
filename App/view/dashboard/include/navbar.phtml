@@ -1,0 +1,115 @@
+<?php
+	$nav = $this->view_data['nav'];
+	$active_item = 'text-white bg-gray-800 hover:bg-gray-400 hover:border-gray-400';
+	$disactive_item = 'text-gray-700 hover:bg-gray-400 focus:bg-gray-200';
+?>
+<div class="flex flex-wrap bg-gray-100 w-full h-screen">
+    <aside class="h-screen w-1/5 bg-white rounded p-5 shadow-lg">
+        <div class="flex items-center space-x-4 p-2 mb-2">
+            <div>
+                <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">Colive London</h4>
+                <small class="text-gray-500">Website Management Dashboard</small>
+            </div>
+        </div>
+		<p class="text-gray-800 p-3 font-medium">Main Menu</p>
+        <ul class="space-y-2 text-sm">
+            <li>
+                <a href="<?php echo DOMAIN ?>admin/home" class="flex items-center space-x-3 p-3 rounded-md font-medium focus:shadow-outline <?php if($nav == 'home'){ echo $active_item;}else{ echo $disactive_item;} ?>">
+                    <span class="<?php if($nav == 'home'){ echo 'text-white';}else{ echo 'text-gray-600';} ?>">
+                        <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+			<li>
+                <a href="<?php echo DOMAIN ?>admin/homepage" class="flex items-center space-x-3 p-3 rounded-md font-medium focus:shadow-outline <?php if($nav == 'homepage'){ echo $active_item;}else{ echo $disactive_item;} ?>">
+                    <span class="<?php if($nav == 'campaign'){ echo 'text-white';}else{ echo 'text-gray-600';} ?>">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+						</svg>
+                    </span>
+                    <span>Homepage</span>
+                </a>
+            </li>
+			<li>
+                <a href="<?php echo DOMAIN ?>admin/aboutpage" class="flex items-center space-x-3 p-3 rounded-md font-medium focus:shadow-outline <?php if($nav == 'aboutpage'){ echo $active_item;}else{ echo $disactive_item;} ?>">
+                    <span class="<?php if($nav == 'analytic'){ echo 'text-white';}else{ echo 'text-gray-600';} ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+						</svg>
+                    </span>
+                    <span>Aboutpage</span>
+                </a>
+            </li>
+			<li>
+                <a href="<?php echo DOMAIN ?>admin/company" class="flex items-center space-x-3 p-3 rounded-md font-medium focus:shadow-outline <?php if($nav == 'company'){ echo $active_item;}else{ echo $disactive_item;} ?>">
+                    <span class="<?php if($nav == 'balance'){ echo 'text-white';}else{ echo 'text-gray-600';} ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+                    </span>
+                    <span>Company Info</span>
+                </a>
+            </li>
+			<li>
+                <a href="<?php echo DOMAIN ?>admin/housing" class="flex items-center space-x-3 p-3 rounded-md font-medium focus:shadow-outline <?php if($nav == 'housing'){ echo $active_item;}else{ echo $disactive_item;} ?>">
+                    <span class="<?php if($nav == 'balance'){ echo 'text-white';}else{ echo 'text-gray-600';} ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+						</svg>
+                    </span>
+                    <span>House Listing</span>
+                </a>
+            </li>
+		</ul>
+    </aside>
+
+	<div class="flex-1 overflow-y-scroll h-full w-4/5">
+		<div class=" m-5">
+			<nav class="flex w-full h-16" name="horizontal nav">
+				<div class="flex flex-grow items-center space-x-4 text-xl">
+					<a href="#">
+						<svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+						</svg>
+					</a>			
+					<h1 class="font-bold"><?php echo $this->view_data['nav_title']?></h1>
+				</div>
+				
+				
+				<div id="avatar" class="flex items-center space-x-4 p-3">					
+					<div>
+						<h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide"><?php echo $this->view_data['username']; ?></h4>
+						<p class="text-sm text-gray-500 text-right"><?php echo $this->view_data['typo']; ?></p>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<svg class="h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+				</div>
+				<div id="dropmenu" class="invisible z-10 absolute right-0 mt-16 mr-12 w-56 rounded-md shadow-lg">
+					<div class="rounded-md bg-white shadow-xs">
+						<div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+							<!--<form method="POST" action="#">-->
+								<a href="<?php echo DOMAIN ?>logout" class="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Sign out</a>
+							<!--</form>-->
+						</div>
+					</div>
+				</div>
+				<script defer>
+				let avatar = document.querySelector('#avatar');
+				let dropmenu = document.querySelector('#dropmenu');
+				avatar.addEventListener('click', function(event) {
+					if ( dropmenu.classList.contains('invisible') ){
+						dropmenu.classList.remove('invisible');
+					}else{
+						dropmenu.classList.add('invisible');
+					}
+					
+				})
+				</script>
+			</nav>
